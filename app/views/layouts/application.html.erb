@@ -9,6 +9,31 @@
   </head>
 
   <body>
+  	<nav class="navbar navbar-expand-md navbar-light" style="background-color: #C0C0C0;">
+  		<a href="/" class="navbar-brand">
+  			RAILS
+  		</a>
+  		<div class="collapse navbar-collapse" id="navbar-collapse-content">
+  			<ul class="navbar-nav">
+	  			<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+	  			<li class="nav-item"><a href="/album" class="nav-link">Album</a></li>
+	  			<li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+	  			<li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+	  		</ul>
+  		</div>
+  		<button class="navbar-toggler btn-primary" data-toggle="collapse" data-target="#navbar-collapse-content">
+  			<span class="navbar-toggler-icon"></span>
+  		</button>
+  	</nav>
     <%= yield %>
+    <footer class="footer">
+		<nav class="navbar" style="background-color: #00008B; color:#ff0";">@CREATED BY 1412410_1412105
+			<nav class="nav navbar-nav pull-xs-left">
+	            <a class="nav-item nav-link" href="/">Home</a>
+	            <a class="nav-item nav-link" href="#">About</a>
+	            <a class="nav-item nav-link" href="#">Help</a>
+        	</nav>
+        </nav>	  
+  	</footer>
   </body>
 </html>
