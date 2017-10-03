@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
   resources :album, only: [:index, :show]
   resources :about, only: [:index]
-  resources :blog,  only: [:index, :show] 
+  resources :blog,  only: [:index, :show]
 end
