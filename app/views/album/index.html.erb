@@ -1,1 +1,19 @@
-<h1>Would you kindly insert some PHOTO here</h1>
+<h1>ALBUM PAGE</h1>
+<div class="container">
+	<div class="row">
+			<% @albums.each do |album| %>
+			<div class="card" style="width: 20rem;">
+				  <img class="card-img-top" src="tom_pic.jpg" alt="Card image cap">
+				  <div class="card-body">
+				    <h4 class="card-title"><%= album.album_name %></h4>
+				    <h6 class="card-subtitle mb-2 text-muted">by <%= album.user.user_name %></h6>
+				<%= link_to album_path(album.id), class: "card-link" do %>
+			    View album
+			    <% end %>
+				  </div>
+				</div>	
+				&nbsp&nbsp&nbsp&nbsp
+			<% end %>
+	</div>
+</br></br>
+</div>
