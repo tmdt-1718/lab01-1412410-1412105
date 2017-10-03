@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get '/articles', to:'articles#index'
   get '/', to: 'home#index'
   resources :articles, only: [:index, :show]
-  resources :album, only: [:index]
+  resources :album, only: [:index, :show]
   resources :about, only: [:index]
   resources :blog,  only: [:index, :show] 
 end
