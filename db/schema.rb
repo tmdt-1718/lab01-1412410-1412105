@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20171004040137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "author"
-    t.integer "cover"
     t.integer "tag"
+    t.integer "cover"
   end
 
   create_table "bcomments", primary_key: "bcomment_id", id: :bigint, default: -> { "nextval('bcomments_id_seq'::regclass)" }, force: :cascade do |t|
