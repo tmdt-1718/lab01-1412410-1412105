@@ -15,7 +15,7 @@ end
 end
 
 (2..10).each do |index|
-	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :cover => nil, :tag => index, :user_id => index)
+	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :photo_id => nil, :tag_id => index, :user_id => index)
 end
 
 (2..9).each do |index|
@@ -23,12 +23,12 @@ end
 end
 
 (2..10).each do |index|
-	Blog.create!(:title => Faker::Lorem.sentence, :content => Faker::Lorem.paragraph(3), :user_id => index, :tag => index, :view => index*5, :useful => index*2)
+	Blog.create!(:title => Faker::Lorem.sentence, :content => Faker::Lorem.paragraph(3), :user_id => index, :tag_id => index, :view => index*5, :useful => index*2)
 end
 
 (2..8).each do |index|
-	Pcomment.create!(:content => Faker::Lorem.paragraph(2), :destination => index, :author => index)
+	Pcomment.create!(:content => Faker::Lorem.paragraph(2), :photo_id => index, :user_id => index)
 end
 (2..9).each do |index|
-	Bcomment.create!(:content => Faker::Lorem.paragraph(2), :destination => index, :author => index)
+	Bcomment.create!(:content => Faker::Lorem.paragraph(2), :blog_id => index, :user_id => index)
 end

@@ -7,7 +7,8 @@ services:
   web:
     build: .
     container_name: webapp
-    command: bundle exec "rm -f tmp/pids/server.pid && rails db:create && rails db:migrate && rails db:seed && bundle install && rails s -b 0.0.0.0"
+    command: bundle exec "rm -f tmp/pids/server.pid && bundle install && rails s -b 0.0.0.0"
+    # rails db:create && rails db:migrate && rails db:seed &&
     env_file: .env
     ports:
       - "3000:3000"
