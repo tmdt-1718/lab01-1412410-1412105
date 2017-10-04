@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004040137) do
+ActiveRecord::Schema.define(version: 20171004121956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20171004040137) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author"
-    t.integer "cover"
+    t.integer "user_id"
     t.integer "tag"
+    t.integer "cover"
   end
 
   create_table "bcomments", primary_key: "bcomment_id", id: :bigint, default: -> { "nextval('bcomments_id_seq'::regclass)" }, force: :cascade do |t|
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20171004040137) do
     t.integer "useful"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author"
+    t.integer "user_id"
     t.integer "tag"
   end
 
@@ -56,9 +56,10 @@ ActiveRecord::Schema.define(version: 20171004040137) do
     t.string "photo_name"
     t.integer "view"
     t.integer "like"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "album"
+    t.integer "album_id"
   end
 
   create_table "tags", primary_key: "tag_id", id: :bigint, default: -> { "nextval('tags_id_seq'::regclass)" }, force: :cascade do |t|
@@ -78,13 +79,13 @@ ActiveRecord::Schema.define(version: 20171004040137) do
 
   add_foreign_key "albums", "photos", column: "cover", primary_key: "photo_id"
   add_foreign_key "albums", "tags", column: "tag", primary_key: "tag_id"
-  add_foreign_key "albums", "users", column: "author", primary_key: "user_id"
+  add_foreign_key "albums", "users", primary_key: "user_id"
   add_foreign_key "bcomments", "blogs", column: "destination", primary_key: "blog_id"
   add_foreign_key "bcomments", "users", column: "author", primary_key: "user_id"
   add_foreign_key "blogs", "tags", column: "tag", primary_key: "tag_id"
-  add_foreign_key "blogs", "users", column: "author", primary_key: "user_id"
+  add_foreign_key "blogs", "users", primary_key: "user_id"
   add_foreign_key "pcomments", "photos", column: "destination", primary_key: "photo_id"
   add_foreign_key "pcomments", "users", column: "author", primary_key: "user_id"
-  add_foreign_key "photos", "albums", column: "album", primary_key: "album_id"
+  add_foreign_key "photos", "albums", primary_key: "album_id"
   add_foreign_key "users", "photos", column: "avatar", primary_key: "photo_id"
 end
