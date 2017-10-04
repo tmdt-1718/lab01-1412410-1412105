@@ -1,4 +1,5 @@
 class BlogController < ApplicationController
+	before_action :authenticate
 	def index
 		@blogs = Blog.all
 	end
