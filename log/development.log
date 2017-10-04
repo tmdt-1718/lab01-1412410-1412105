@@ -7455,3 +7455,1619 @@ FOREIGN KEY ("photo_id")
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Fuga molestiae natus. Possimus nisi quos repellat necessitatibus. Voluptas maiores ipsam."], ["created_at", "2017-10-04 11:58:48.023689"], ["updated_at", "2017-10-04 11:58:48.023689"], ["author", 9], ["destination", 9]]
   [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 11:58:54 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 589ms (Views: 562.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 11:58:59 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 175ms (Views: 153.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/album/1" for 172.19.0.1 at 2017-10-04 11:59:01 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."album_id" = $1 LIMIT $2[0m  [["album_id", 1], ["LIMIT", 1]]
+  Rendering album/show.html.erb within layouts/application
+  Rendered album/show.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `photos' for #<Album:0x000000000320b400>):
+    1: <h1>PHOTO PAGE</h1>
+    2: <div class="container">
+    3: 	<%= @albums.photos.each do |photo| %>
+    4: 	<div class="card" style="width: 20rem;">
+    5: 	  <img class="card-img-top" src="" alt="Card image cap">
+    6: 	  <div class="card-body">
+  
+app/views/album/show.html.erb:3:in `_app_views_album_show_html_erb__2218303903442218161_26155760'
+Started GET "/album/tom_pic.jpg" for 172.19.0.1 at 2017-10-04 11:59:02 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#show as JPEG
+  Parameters: {"id"=>"tom_pic"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."album_id" = $1 LIMIT $2[0m  [["album_id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Album with 'album_id'=tom_pic):
+  
+app/controllers/album_controller.rb:7:in `show'
+Started GET "/album" for 172.19.0.1 at 2017-10-04 11:59:03 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 98ms (Views: 92.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 172.19.0.1 at 2017-10-04 11:59:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2017-10-04 11:59:05 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 11:59:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 91ms (Views: 80.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 172.19.0.1 at 2017-10-04 11:59:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AboutController#index as HTML
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 83ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 11:59:07 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 98ms (Views: 76.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blog/1" for 172.19.0.1 at 2017-10-04 12:00:52 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."blog_id" = $1 LIMIT $2[0m  [["blog_id", 1], ["LIMIT", 1]]
+  Rendering blog/show.html.erb within layouts/application
+  Rendered blog/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 74.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blog/tom_pic.jpg" for 172.19.0.1 at 2017-10-04 12:00:52 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#show as JPEG
+  Parameters: {"id"=>"tom_pic"}
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."blog_id" = $1 LIMIT $2[0m  [["blog_id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'blog_id'=tom_pic):
+  
+app/controllers/blog_controller.rb:7:in `show'
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:00:55 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 83ms (Views: 76.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:02:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 100ms (Views: 88.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:02:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 78ms (Views: 73.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/about" for 172.19.0.1 at 2017-10-04 12:02:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AboutController#index as HTML
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 62ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 172.19.0.1 at 2017-10-04 12:03:24 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AboutController#index as HTML
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:03:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 82ms (Views: 73.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/album/1" for 172.19.0.1 at 2017-10-04 12:03:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."album_id" = $1 LIMIT $2[0m  [["album_id", 1], ["LIMIT", 1]]
+  Rendering album/show.html.erb within layouts/application
+  Rendered album/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `photos' for #<Album:0x00007fc87c2f7118>):
+    1: <h1>PHOTO PAGE</h1>
+    2: <div class="container">
+    3: 	<%= @albums.photos.each do |photo| %>
+    4: 	<div class="card" style="width: 20rem;">
+    5: 	  <img class="card-img-top" src="" alt="Card image cap">
+    6: 	  <div class="card-body">
+  
+app/views/album/show.html.erb:3:in `_app_views_album_show_html_erb__2218303903442218161_70249526832600'
+Started GET "/album/tom_pic.jpg" for 172.19.0.1 at 2017-10-04 12:03:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#show as JPEG
+  Parameters: {"id"=>"tom_pic"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."album_id" = $1 LIMIT $2[0m  [["album_id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Album with 'album_id'=tom_pic):
+  
+app/controllers/album_controller.rb:7:in `show'
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:03:30 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 95ms (Views: 88.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 172.19.0.1 at 2017-10-04 12:05:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 94ms (Views: 90.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:05:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 79ms (Views: 68.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 172.19.0.1 at 2017-10-04 12:05:42 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AboutController#index as HTML
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 12:05:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 91ms (Views: 85.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 12:08:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 113ms (Views: 95.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blog/1" for 172.19.0.1 at 2017-10-04 12:08:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."blog_id" = $1 LIMIT $2[0m  [["blog_id", 1], ["LIMIT", 1]]
+  Rendering blog/show.html.erb within layouts/application
+  Rendered blog/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 88ms (Views: 80.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blog/tom_pic.jpg" for 172.19.0.1 at 2017-10-04 12:08:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#show as JPEG
+  Parameters: {"id"=>"tom_pic"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."blog_id" = $1 LIMIT $2[0m  [["blog_id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'blog_id'=tom_pic):
+  
+app/controllers/blog_controller.rb:7:in `show'
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:08:45 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `author' for nil:NilClass):
+     6: 				  <img class="card-img-top" src="tom_pic.jpg" alt="Card image cap">
+     7: 				  <div class="card-body">
+     8: 				    <h4 class="card-title"><%= album.album_name %></h4>
+     9: 				    <h6 class="card-subtitle mb-2 text-muted">by <%= album.user.author%></h6>
+    10: 				<%= link_to album_path(album.id), class: "card-link" do %>
+    11: 			    View album
+    12: 			    <% end %>
+  
+app/views/album/index.html.erb:9:in `block in _app_views_album_index_html_erb__4238881467474450831_70249527278100'
+app/views/album/index.html.erb:4:in `_app_views_album_index_html_erb__4238881467474450831_70249527278100'
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 12:08:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 105ms (Views: 98.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 12:08:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 111ms (Views: 96.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:08:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 88ms (Views: 80.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:11:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for nil:NilClass):
+     6: 				  <img class="card-img-top" src="tom_pic.jpg" alt="Card image cap">
+     7: 				  <div class="card-body">
+     8: 				    <h4 class="card-title"><%= album.album_name %></h4>
+     9: 				    <h6 class="card-subtitle mb-2 text-muted">by <%= album.user.user_name%></h6>
+    10: 				<%= link_to album_path(album.id), class: "card-link" do %>
+    11: 			    View album
+    12: 			    <% end %>
+  
+app/views/album/index.html.erb:9:in `block in _app_views_album_index_html_erb__4238881467474450831_70249528006400'
+app/views/album/index.html.erb:4:in `_app_views_album_index_html_erb__4238881467474450831_70249528006400'
+Started GET "/blog" for 172.19.0.1 at 2017-10-04 12:12:08 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blog/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 155ms (Views: 145.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/about" for 172.19.0.1 at 2017-10-04 12:12:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AboutController#index as HTML
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 126ms (Views: 119.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:12:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass):
+     6: 				  <img class="card-img-top" src="tom_pic.jpg" alt="Card image cap">
+     7: 				  <div class="card-body">
+     8: 				    <h4 class="card-title"><%= album.album_name %></h4>
+     9: 				    <h6 class="card-subtitle mb-2 text-muted">by <%= @album.user.user_name%></h6>
+    10: 				<%= link_to album_path(album.id), class: "card-link" do %>
+    11: 			    View album
+    12: 			    <% end %>
+  
+app/views/album/index.html.erb:9:in `block in _app_views_album_index_html_erb__4238881467474450831_70249508649660'
+app/views/album/index.html.erb:4:in `_app_views_album_index_html_erb__4238881467474450831_70249508649660'
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:12:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Album::ActiveRecord_Relation:0x00007fc87aa14a60>):
+     6: 				  <img class="card-img-top" src="tom_pic.jpg" alt="Card image cap">
+     7: 				  <div class="card-body">
+     8: 				    <h4 class="card-title"><%= album.album_name %></h4>
+     9: 				    <h6 class="card-subtitle mb-2 text-muted">by <%= @albums.user.user_name%></h6>
+    10: 				<%= link_to album_path(album.id), class: "card-link" do %>
+    11: 			    View album
+    12: 			    <% end %>
+  
+app/views/album/index.html.erb:9:in `block in _app_views_album_index_html_erb__4238881467474450831_70249513768300'
+app/views/album/index.html.erb:4:in `_app_views_album_index_html_erb__4238881467474450831_70249513768300'
+Started GET "/album" for 172.19.0.1 at 2017-10-04 12:12:35 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumController#index as HTML
+  Rendering album/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered album/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 111ms (Views: 95.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (40.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (62.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1932410105524239390)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTags (20170930045830)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (59.2ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "tags" RENAME COLUMN "id" TO "tag_id"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930045830"]]
+  [1m[35m (69.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAlbums (20170930064009)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (73.4ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "album_name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "id" TO "album_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064009"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20170930064405)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (51.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photo_name" character varying, "view" integer, "like" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "id" TO "photo_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064405"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBlogs (20170930064932)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.2ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "content" text, "view" integer, "useful" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "id" TO "blog_id"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064932"]]
+  [1m[35m (33.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170930091414)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (234.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "id" TO "user_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930091414"]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToAlbums (20170930094531)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "albums" ADD "user_id" integer[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_964016e0e8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094531"]]
+  [1m[35m (42.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBlogs (20170930094758)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" ADD "user_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_40ebb3948d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094758"]]
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAlbumsToPhotos (20170930095008)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "photos" ADD "album_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_2593557582"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("album_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "album_id" TO "album"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930095008"]]
+  [1m[35m (63.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToAlbums (20170930100251)
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "albums" ADD "tag_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_38d1648a84"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100251"]]
+  [1m[35m (54.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToBlogs (20170930100401)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" ADD "tag_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_708874acaa"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100401"]]
+  [1m[35m (61.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToAlbums (20170930100829)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "albums" ADD "photo_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_c99cb54e54"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "photo_id" TO "cover"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100829"]]
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePcomments (20171004030814)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (71.2ms)[0m  [1m[35mCREATE TABLE "pcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "id" TO "pcomment_id"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030814"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBcomments (20171004030955)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (70.7ms)[0m  [1m[35mCREATE TABLE "bcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "id" TO "bcomment_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030955"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToPcomments (20171004031710)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "user_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_93903f4b21"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031710"]]
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBcomments (20171004031806)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "user_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_32befe3629"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031806"]]
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToPcomments (20171004031917)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "photo_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_303fe73592"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "photo_id" TO "destination"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031917"]]
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddBlogsToBcomments (20171004032155)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "blog_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_c30004a2ba"
+FOREIGN KEY ("blog_id")
+  REFERENCES "blogs" ("blog_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "blog_id" TO "destination"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004032155"]]
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToUsers (20171004040137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_0c23dac8aa"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "photo_id" TO "avatar"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004040137"]]
+  [1m[35m (63.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeObject (20171004121956)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1932410105524239390)[0m
+  [1m[35m (50.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (59.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1932410105524239390)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTags (20170930045830)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (344.3ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "tags" RENAME COLUMN "id" TO "tag_id"[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930045830"]]
+  [1m[35m (55.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAlbums (20170930064009)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (61.3ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "album_name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "id" TO "album_id"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064009"]]
+  [1m[35m (67.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20170930064405)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photo_name" character varying, "view" integer, "like" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "id" TO "photo_id"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064405"]]
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBlogs (20170930064932)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.5ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "content" text, "view" integer, "useful" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "id" TO "blog_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064932"]]
+  [1m[35m (55.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170930091414)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (56.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "id" TO "user_id"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930091414"]]
+  [1m[35m (60.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToAlbums (20170930094531)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "albums" ADD "user_id" integer[0m
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_964016e0e8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094531"]]
+  [1m[35m (46.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBlogs (20170930094758)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "blogs" ADD "user_id" integer[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_40ebb3948d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094758"]]
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAlbumsToPhotos (20170930095008)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "photos" ADD "album_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_2593557582"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("album_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "album_id" TO "album"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930095008"]]
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToAlbums (20170930100251)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "albums" ADD "tag_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_38d1648a84"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100251"]]
+  [1m[35m (57.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToBlogs (20170930100401)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "blogs" ADD "tag_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_708874acaa"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100401"]]
+  [1m[35m (63.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToAlbums (20170930100829)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "albums" ADD "photo_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_c99cb54e54"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "photo_id" TO "cover"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100829"]]
+  [1m[35m (51.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePcomments (20171004030814)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.4ms)[0m  [1m[35mCREATE TABLE "pcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "id" TO "pcomment_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030814"]]
+  [1m[35m (57.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBcomments (20171004030955)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (106.2ms)[0m  [1m[35mCREATE TABLE "bcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "id" TO "bcomment_id"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030955"]]
+  [1m[35m (66.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToPcomments (20171004031710)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "user_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_93903f4b21"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031710"]]
+  [1m[35m (54.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBcomments (20171004031806)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "user_id" integer[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_32befe3629"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031806"]]
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToPcomments (20171004031917)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "photo_id" integer[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_303fe73592"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "photo_id" TO "destination"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031917"]]
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddBlogsToBcomments (20171004032155)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "blog_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_c30004a2ba"
+FOREIGN KEY ("blog_id")
+  REFERENCES "blogs" ("blog_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "blog_id" TO "destination"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004032155"]]
+  [1m[35m (36.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToUsers (20171004040137)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_id" integer[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_0c23dac8aa"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "photo_id" TO "avatar"[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004040137"]]
+  [1m[35m (58.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeObject (20171004121956)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004121956"]]
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-04 12:24:36.136114"], ["updated_at", "2017-10-04 12:24:36.136114"]]
+  [1m[35m (57.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1932410105524239390)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Wallace Zulauf"], ["password", "password 0"], ["email", "krista_walsh@kunze.com"], ["created_at", "2017-10-04 12:24:38.055381"], ["updated_at", "2017-10-04 12:24:38.055381"]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Opal Koepp DVM"], ["password", "password 1"], ["email", "monroe@dach.org"], ["created_at", "2017-10-04 12:24:38.072344"], ["updated_at", "2017-10-04 12:24:38.072344"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Khalid Larson DVM"], ["password", "password 2"], ["email", "ona@hegmann.biz"], ["created_at", "2017-10-04 12:24:38.079229"], ["updated_at", "2017-10-04 12:24:38.079229"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Ford Upton Sr."], ["password", "password 3"], ["email", "lelah@pacocha.info"], ["created_at", "2017-10-04 12:24:38.097852"], ["updated_at", "2017-10-04 12:24:38.097852"]]
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Bradly Spinka"], ["password", "password 4"], ["email", "tre_mertz@ankunding.net"], ["created_at", "2017-10-04 12:24:38.129371"], ["updated_at", "2017-10-04 12:24:38.129371"]]
+  [1m[35m (35.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Mose Terry"], ["password", "password 5"], ["email", "syble@lubowitz.org"], ["created_at", "2017-10-04 12:24:38.173655"], ["updated_at", "2017-10-04 12:24:38.173655"]]
+  [1m[35m (62.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Thomas Carter"], ["password", "password 6"], ["email", "amiya@rau.biz"], ["created_at", "2017-10-04 12:24:38.243428"], ["updated_at", "2017-10-04 12:24:38.243428"]]
+  [1m[35m (65.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Dallas Tromp"], ["password", "password 7"], ["email", "diamond@lefflerparker.io"], ["created_at", "2017-10-04 12:24:38.316559"], ["updated_at", "2017-10-04 12:24:38.316559"]]
+  [1m[35m (49.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Krystal Ledner MD"], ["password", "password 8"], ["email", "broderick.gulgowski@herzoghyatt.co"], ["created_at", "2017-10-04 12:24:38.373786"], ["updated_at", "2017-10-04 12:24:38.373786"]]
+  [1m[35m (35.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Lucas Johns"], ["password", "password 9"], ["email", "kurtis@stanton.info"], ["created_at", "2017-10-04 12:24:38.416329"], ["updated_at", "2017-10-04 12:24:38.416329"]]
+  [1m[35m (50.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag0"], ["created_at", "2017-10-04 12:24:38.510548"], ["updated_at", "2017-10-04 12:24:38.510548"]]
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag1"], ["created_at", "2017-10-04 12:24:38.546926"], ["updated_at", "2017-10-04 12:24:38.546926"]]
+  [1m[35m (53.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag2"], ["created_at", "2017-10-04 12:24:38.604684"], ["updated_at", "2017-10-04 12:24:38.604684"]]
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag3"], ["created_at", "2017-10-04 12:24:38.648051"], ["updated_at", "2017-10-04 12:24:38.648051"]]
+  [1m[35m (52.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag4"], ["created_at", "2017-10-04 12:24:38.704600"], ["updated_at", "2017-10-04 12:24:38.704600"]]
+  [1m[35m (38.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag5"], ["created_at", "2017-10-04 12:24:38.748411"], ["updated_at", "2017-10-04 12:24:38.748411"]]
+  [1m[35m (52.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag6"], ["created_at", "2017-10-04 12:24:38.805343"], ["updated_at", "2017-10-04 12:24:38.805343"]]
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag7"], ["created_at", "2017-10-04 12:24:38.848244"], ["updated_at", "2017-10-04 12:24:38.848244"]]
+  [1m[35m (52.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag8"], ["created_at", "2017-10-04 12:24:38.905278"], ["updated_at", "2017-10-04 12:24:38.905278"]]
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag9"], ["created_at", "2017-10-04 12:24:38.948546"], ["updated_at", "2017-10-04 12:24:38.948546"]]
+  [1m[35m (52.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (67.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (97.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1932410105524239390)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTags (20170930045830)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (60.0ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "tags" RENAME COLUMN "id" TO "tag_id"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930045830"]]
+  [1m[35m (45.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAlbums (20170930064009)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (107.0ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "album_name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "id" TO "album_id"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064009"]]
+  [1m[35m (55.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20170930064405)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (70.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photo_name" character varying, "view" integer, "like" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "id" TO "photo_id"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064405"]]
+  [1m[35m (52.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBlogs (20170930064932)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (589.9ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "content" text, "view" integer, "useful" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "id" TO "blog_id"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064932"]]
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170930091414)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (642.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "id" TO "user_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930091414"]]
+  [1m[35m (62.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToAlbums (20170930094531)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "albums" ADD "user_id" integer[0m
+  [1m[35m (4.3ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_964016e0e8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094531"]]
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBlogs (20170930094758)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "blogs" ADD "user_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_40ebb3948d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094758"]]
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAlbumsToPhotos (20170930095008)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "photos" ADD "album_id" integer[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_2593557582"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("album_id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "album_id" TO "album"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930095008"]]
+  [1m[35m (54.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToAlbums (20170930100251)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" ADD "tag_id" integer[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_38d1648a84"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100251"]]
+  [1m[35m (56.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToBlogs (20170930100401)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "blogs" ADD "tag_id" integer[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_708874acaa"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100401"]]
+  [1m[35m (46.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToAlbums (20170930100829)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "albums" ADD "photo_id" integer[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_c99cb54e54"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "photo_id" TO "cover"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100829"]]
+  [1m[35m (60.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePcomments (20171004030814)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (61.1ms)[0m  [1m[35mCREATE TABLE "pcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "id" TO "pcomment_id"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030814"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBcomments (20171004030955)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE TABLE "bcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "id" TO "bcomment_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030955"]]
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToPcomments (20171004031710)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "user_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_93903f4b21"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031710"]]
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBcomments (20171004031806)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "user_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_32befe3629"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031806"]]
+  [1m[35m (60.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToPcomments (20171004031917)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "photo_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_303fe73592"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "photo_id" TO "destination"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031917"]]
+  [1m[35m (26.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddBlogsToBcomments (20171004032155)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "blog_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_c30004a2ba"
+FOREIGN KEY ("blog_id")
+  REFERENCES "blogs" ("blog_id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "blog_id" TO "destination"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004032155"]]
+  [1m[35m (37.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToUsers (20171004040137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_id" integer[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_0c23dac8aa"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "photo_id" TO "avatar"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004040137"]]
+  [1m[35m (66.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeObject (20171004121956)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004121956"]]
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-04 12:26:00.795810"], ["updated_at", "2017-10-04 12:26:00.795810"]]
+  [1m[35m (26.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1932410105524239390)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Selmer Langosh"], ["password", "password 0"], ["email", "rahsaan_lesch@hand.info"], ["created_at", "2017-10-04 12:26:02.604156"], ["updated_at", "2017-10-04 12:26:02.604156"]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Jazmyne Dach"], ["password", "password 1"], ["email", "waylon_feest@bogisich.io"], ["created_at", "2017-10-04 12:26:02.621591"], ["updated_at", "2017-10-04 12:26:02.621591"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Estelle Fay"], ["password", "password 2"], ["email", "mozell.farrell@oharaharvey.info"], ["created_at", "2017-10-04 12:26:02.638123"], ["updated_at", "2017-10-04 12:26:02.638123"]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Miss Mafalda O'Keefe"], ["password", "password 3"], ["email", "emmie_ko@casper.name"], ["created_at", "2017-10-04 12:26:02.654928"], ["updated_at", "2017-10-04 12:26:02.654928"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Pasquale Bauch I"], ["password", "password 4"], ["email", "cleo_kaulke@kautzerreichert.biz"], ["created_at", "2017-10-04 12:26:02.661797"], ["updated_at", "2017-10-04 12:26:02.661797"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Dannie Mitchell"], ["password", "password 5"], ["email", "lavada_gerlach@harrisfahey.io"], ["created_at", "2017-10-04 12:26:02.678586"], ["updated_at", "2017-10-04 12:26:02.678586"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Kendrick Ratke"], ["password", "password 6"], ["email", "guie_ward@kulas.net"], ["created_at", "2017-10-04 12:26:02.685458"], ["updated_at", "2017-10-04 12:26:02.685458"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Dr. Lesley Lowe"], ["password", "password 7"], ["email", "cortney.olson@roobcartwright.biz"], ["created_at", "2017-10-04 12:26:02.702320"], ["updated_at", "2017-10-04 12:26:02.702320"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Dr. Cierra Kihn"], ["password", "password 8"], ["email", "rupert@marksratke.io"], ["created_at", "2017-10-04 12:26:02.709969"], ["updated_at", "2017-10-04 12:26:02.709969"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Jacques Block"], ["password", "password 9"], ["email", "verna.schiller@kirlin.biz"], ["created_at", "2017-10-04 12:26:02.715702"], ["updated_at", "2017-10-04 12:26:02.715702"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag0"], ["created_at", "2017-10-04 12:26:02.729113"], ["updated_at", "2017-10-04 12:26:02.729113"]]
+  [1m[35m (48.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag1"], ["created_at", "2017-10-04 12:26:02.779481"], ["updated_at", "2017-10-04 12:26:02.779481"]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag2"], ["created_at", "2017-10-04 12:26:02.795776"], ["updated_at", "2017-10-04 12:26:02.795776"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag3"], ["created_at", "2017-10-04 12:26:02.801478"], ["updated_at", "2017-10-04 12:26:02.801478"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag4"], ["created_at", "2017-10-04 12:26:02.806895"], ["updated_at", "2017-10-04 12:26:02.806895"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag5"], ["created_at", "2017-10-04 12:26:02.812701"], ["updated_at", "2017-10-04 12:26:02.812701"]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag6"], ["created_at", "2017-10-04 12:26:02.829060"], ["updated_at", "2017-10-04 12:26:02.829060"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag7"], ["created_at", "2017-10-04 12:26:02.834802"], ["updated_at", "2017-10-04 12:26:02.834802"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag8"], ["created_at", "2017-10-04 12:26:02.840152"], ["updated_at", "2017-10-04 12:26:02.840152"]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag9"], ["created_at", "2017-10-04 12:26:02.855806"], ["updated_at", "2017-10-04 12:26:02.855806"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (72.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (92.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1932410105524239390)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTags (20170930045830)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "tags" RENAME COLUMN "id" TO "tag_id"[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930045830"]]
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAlbums (20170930064009)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (66.4ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "album_name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "id" TO "album_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064009"]]
+  [1m[35m (59.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20170930064405)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (76.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photo_name" character varying, "view" integer, "like" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "id" TO "photo_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064405"]]
+  [1m[35m (61.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBlogs (20170930064932)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (75.3ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "content" text, "view" integer, "useful" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "id" TO "blog_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064932"]]
+  [1m[35m (62.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170930091414)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (51.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "id" TO "user_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930091414"]]
+  [1m[35m (37.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToAlbums (20170930094531)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "albums" ADD "user_id" integer[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_964016e0e8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094531"]]
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBlogs (20170930094758)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "blogs" ADD "user_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_40ebb3948d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094758"]]
+  [1m[35m (37.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAlbumsToPhotos (20170930095008)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "photos" ADD "album_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_2593557582"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("album_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "album_id" TO "album"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930095008"]]
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToAlbums (20170930100251)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "albums" ADD "tag_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_38d1648a84"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100251"]]
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToBlogs (20170930100401)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "blogs" ADD "tag_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_708874acaa"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100401"]]
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToAlbums (20170930100829)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "albums" ADD "photo_id" integer[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_c99cb54e54"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "photo_id" TO "cover"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100829"]]
+  [1m[35m (57.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePcomments (20171004030814)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (66.7ms)[0m  [1m[35mCREATE TABLE "pcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "id" TO "pcomment_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030814"]]
+  [1m[35m (72.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBcomments (20171004030955)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (54.5ms)[0m  [1m[35mCREATE TABLE "bcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "id" TO "bcomment_id"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030955"]]
+  [1m[35m (63.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToPcomments (20171004031710)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "user_id" integer[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_93903f4b21"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031710"]]
+  [1m[35m (44.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBcomments (20171004031806)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "user_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_32befe3629"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031806"]]
+  [1m[35m (55.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToPcomments (20171004031917)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "photo_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_303fe73592"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "photo_id" TO "destination"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031917"]]
+  [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddBlogsToBcomments (20171004032155)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "blog_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_c30004a2ba"
+FOREIGN KEY ("blog_id")
+  REFERENCES "blogs" ("blog_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "blog_id" TO "destination"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004032155"]]
+  [1m[35m (34.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToUsers (20171004040137)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_0c23dac8aa"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "photo_id" TO "avatar"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004040137"]]
+  [1m[35m (45.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeObject (20171004121956)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004121956"]]
+  [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-04 12:26:37.888361"], ["updated_at", "2017-10-04 12:26:37.888361"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1932410105524239390)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Evangeline Stoltenberg"], ["password", "password 0"], ["email", "allen@labadie.info"], ["created_at", "2017-10-04 12:26:39.668573"], ["updated_at", "2017-10-04 12:26:39.668573"]]
+  [1m[35m (44.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Quinton Ruecker"], ["password", "password 1"], ["email", "bradley_schneider@schadentremblay.co"], ["created_at", "2017-10-04 12:26:39.718402"], ["updated_at", "2017-10-04 12:26:39.718402"]]
+  [1m[35m (22.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Daisy Murazik"], ["password", "password 2"], ["email", "yasmine.weber@baumbach.net"], ["created_at", "2017-10-04 12:26:39.748068"], ["updated_at", "2017-10-04 12:26:39.748068"]]
+  [1m[35m (36.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Oral Cassin"], ["password", "password 3"], ["email", "darryl.hauck@morar.org"], ["created_at", "2017-10-04 12:26:39.791700"], ["updated_at", "2017-10-04 12:26:39.791700"]]
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Neha Davis DVM"], ["password", "password 4"], ["email", "irving_dubuque@zboncakblock.name"], ["created_at", "2017-10-04 12:26:39.826216"], ["updated_at", "2017-10-04 12:26:39.826216"]]
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Selmer Von"], ["password", "password 5"], ["email", "carol_kreiger@lemke.name"], ["created_at", "2017-10-04 12:26:39.869013"], ["updated_at", "2017-10-04 12:26:39.869013"]]
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Jalen Boehm"], ["password", "password 6"], ["email", "rhea@gradyeffertz.io"], ["created_at", "2017-10-04 12:26:39.903785"], ["updated_at", "2017-10-04 12:26:39.903785"]]
+  [1m[35m (61.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Janick Wintheiser"], ["password", "password 7"], ["email", "laurence@torp.org"], ["created_at", "2017-10-04 12:26:39.971223"], ["updated_at", "2017-10-04 12:26:39.971223"]]
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Christ Beer DVM"], ["password", "password 8"], ["email", "loyce.lowe@collier.com"], ["created_at", "2017-10-04 12:26:40.018989"], ["updated_at", "2017-10-04 12:26:40.018989"]]
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Milo Treutel"], ["password", "password 9"], ["email", "cloyd.klocko@cormier.net"], ["created_at", "2017-10-04 12:26:40.057204"], ["updated_at", "2017-10-04 12:26:40.057204"]]
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag0"], ["created_at", "2017-10-04 12:26:40.133584"], ["updated_at", "2017-10-04 12:26:40.133584"]]
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag1"], ["created_at", "2017-10-04 12:26:40.175016"], ["updated_at", "2017-10-04 12:26:40.175016"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag2"], ["created_at", "2017-10-04 12:26:40.192215"], ["updated_at", "2017-10-04 12:26:40.192215"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag3"], ["created_at", "2017-10-04 12:26:40.197766"], ["updated_at", "2017-10-04 12:26:40.197766"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag4"], ["created_at", "2017-10-04 12:26:40.203097"], ["updated_at", "2017-10-04 12:26:40.203097"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag5"], ["created_at", "2017-10-04 12:26:40.209162"], ["updated_at", "2017-10-04 12:26:40.209162"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag6"], ["created_at", "2017-10-04 12:26:40.215716"], ["updated_at", "2017-10-04 12:26:40.215716"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag7"], ["created_at", "2017-10-04 12:26:40.221156"], ["updated_at", "2017-10-04 12:26:40.221156"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag8"], ["created_at", "2017-10-04 12:26:40.226601"], ["updated_at", "2017-10-04 12:26:40.226601"]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag9"], ["created_at", "2017-10-04 12:26:40.241982"], ["updated_at", "2017-10-04 12:26:40.241982"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (65.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (100.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1932410105524239390)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTags (20170930045830)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (71.6ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "tags" RENAME COLUMN "id" TO "tag_id"[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930045830"]]
+  [1m[35m (72.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAlbums (20170930064009)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "album_name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "id" TO "album_id"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064009"]]
+  [1m[35m (47.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20170930064405)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photo_name" character varying, "view" integer, "like" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "id" TO "photo_id"[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064405"]]
+  [1m[35m (70.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBlogs (20170930064932)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (98.5ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "content" text, "view" integer, "useful" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "id" TO "blog_id"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930064932"]]
+  [1m[35m (53.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170930091414)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (87.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "id" TO "user_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930091414"]]
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToAlbums (20170930094531)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "albums" ADD "user_id" integer[0m
+  [1m[35m (4.1ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_964016e0e8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094531"]]
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBlogs (20170930094758)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "blogs" ADD "user_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_40ebb3948d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930094758"]]
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAlbumsToPhotos (20170930095008)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "photos" ADD "album_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_2593557582"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("album_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "album_id" TO "album"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930095008"]]
+  [1m[35m (44.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToAlbums (20170930100251)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "albums" ADD "tag_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_38d1648a84"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100251"]]
+  [1m[35m (49.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToBlogs (20170930100401)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "blogs" ADD "tag_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "blogs" ADD CONSTRAINT "fk_rails_708874acaa"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("tag_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "tag_id" TO "tag"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100401"]]
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToAlbums (20170930100829)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "albums" ADD "photo_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_c99cb54e54"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "photo_id" TO "cover"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170930100829"]]
+  [1m[35m (49.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePcomments (20171004030814)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (76.6ms)[0m  [1m[35mCREATE TABLE "pcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "id" TO "pcomment_id"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030814"]]
+  [1m[35m (55.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBcomments (20171004030955)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.4ms)[0m  [1m[35mCREATE TABLE "bcomments" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "id" TO "bcomment_id"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004030955"]]
+  [1m[35m (56.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToPcomments (20171004031710)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "user_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_93903f4b21"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031710"]]
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsersToBcomments (20171004031806)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "user_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_32befe3629"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("user_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "user_id" TO "author"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031806"]]
+  [1m[35m (48.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToPcomments (20171004031917)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "pcomments" ADD "photo_id" integer[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "pcomments" ADD CONSTRAINT "fk_rails_303fe73592"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "pcomments" RENAME COLUMN "photo_id" TO "destination"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004031917"]]
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddBlogsToBcomments (20171004032155)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "bcomments" ADD "blog_id" integer[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "bcomments" ADD CONSTRAINT "fk_rails_c30004a2ba"
+FOREIGN KEY ("blog_id")
+  REFERENCES "blogs" ("blog_id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bcomments" RENAME COLUMN "blog_id" TO "destination"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004032155"]]
+  [1m[35m (38.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhotosToUsers (20171004040137)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "photo_id" integer[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_0c23dac8aa"
+FOREIGN KEY ("photo_id")
+  REFERENCES "photos" ("photo_id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "photo_id" TO "avatar"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004040137"]]
+  [1m[35m (42.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeObject (20171004121956)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "blogs" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" RENAME COLUMN "author" TO "user_id"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004121956"]]
+  [1m[35m (54.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-04 12:28:50.711624"], ["updated_at", "2017-10-04 12:28:50.711624"]]
+  [1m[35m (52.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1932410105524239390)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Ms. Sienna Botsford"], ["password", "password 0"], ["email", "anahi@krajcik.net"], ["created_at", "2017-10-04 12:28:52.506990"], ["updated_at", "2017-10-04 12:28:52.506990"]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Selena Kiehn"], ["password", "password 1"], ["email", "merle_hilll@hermann.info"], ["created_at", "2017-10-04 12:28:52.523951"], ["updated_at", "2017-10-04 12:28:52.523951"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Anne Kling"], ["password", "password 2"], ["email", "armani@kuhlman.co"], ["created_at", "2017-10-04 12:28:52.540308"], ["updated_at", "2017-10-04 12:28:52.540308"]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Ressie Yost"], ["password", "password 3"], ["email", "althea@quitzonwatsica.co"], ["created_at", "2017-10-04 12:28:52.545984"], ["updated_at", "2017-10-04 12:28:52.545984"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Electa Terry III"], ["password", "password 4"], ["email", "merle.nikolaus@murray.name"], ["created_at", "2017-10-04 12:28:52.552430"], ["updated_at", "2017-10-04 12:28:52.552430"]]
+  [1m[35m (42.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Hermina Medhurst"], ["password", "password 5"], ["email", "kenna@hudson.info"], ["created_at", "2017-10-04 12:28:52.600521"], ["updated_at", "2017-10-04 12:28:52.600521"]]
+  [1m[35m (35.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Summer O'Conner"], ["password", "password 6"], ["email", "muhammad@johnson.net"], ["created_at", "2017-10-04 12:28:52.641043"], ["updated_at", "2017-10-04 12:28:52.641043"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Anita Kreiger"], ["password", "password 7"], ["email", "van@predovic.co"], ["created_at", "2017-10-04 12:28:52.649183"], ["updated_at", "2017-10-04 12:28:52.649183"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Rodger Cartwright"], ["password", "password 8"], ["email", "eleonore.cronin@strackestehr.com"], ["created_at", "2017-10-04 12:28:52.655871"], ["updated_at", "2017-10-04 12:28:52.655871"]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "user_id"[0m  [["user_name", "Maryse Gibson"], ["password", "password 9"], ["email", "thora@hagenes.info"], ["created_at", "2017-10-04 12:28:52.674134"], ["updated_at", "2017-10-04 12:28:52.674134"]]
+  [1m[35m (76.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag0"], ["created_at", "2017-10-04 12:28:52.784263"], ["updated_at", "2017-10-04 12:28:52.784263"]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag1"], ["created_at", "2017-10-04 12:28:52.808493"], ["updated_at", "2017-10-04 12:28:52.808493"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag2"], ["created_at", "2017-10-04 12:28:52.817373"], ["updated_at", "2017-10-04 12:28:52.817373"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag3"], ["created_at", "2017-10-04 12:28:52.824454"], ["updated_at", "2017-10-04 12:28:52.824454"]]
+  [1m[35m (49.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag4"], ["created_at", "2017-10-04 12:28:52.877303"], ["updated_at", "2017-10-04 12:28:52.877303"]]
+  [1m[35m (39.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag5"], ["created_at", "2017-10-04 12:28:52.920501"], ["updated_at", "2017-10-04 12:28:52.920501"]]
+  [1m[35m (38.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag6"], ["created_at", "2017-10-04 12:28:52.963397"], ["updated_at", "2017-10-04 12:28:52.963397"]]
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag7"], ["created_at", "2017-10-04 12:28:52.998243"], ["updated_at", "2017-10-04 12:28:52.998243"]]
+  [1m[35m (38.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag8"], ["created_at", "2017-10-04 12:28:53.041174"], ["updated_at", "2017-10-04 12:28:53.041174"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "tag_id"[0m  [["tag_name", "#tag9"], ["created_at", "2017-10-04 12:28:53.060978"], ["updated_at", "2017-10-04 12:28:53.060978"]]
+  [1m[35m (45.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 2"], ["description", "Molestiae maxime excepturi sed laudantium. Nostrum fugiat ut in aut aut."], ["created_at", "2017-10-04 12:28:53.165467"], ["updated_at", "2017-10-04 12:28:53.165467"], ["user_id", 2], ["tag", 2]]
+  [1m[35m (53.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 3"], ["description", "Voluptas qui voluptas voluptatem perspiciatis. Quisquam quidem sit omnis illo et. Fugit quis esse aliquid sequi. Cupiditate eum enim aut."], ["created_at", "2017-10-04 12:28:53.224604"], ["updated_at", "2017-10-04 12:28:53.224604"], ["user_id", 3], ["tag", 3]]
+  [1m[35m (172.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 4"], ["description", "Quo praesentium eveniet cum sit quod tempore. Suscipit impedit eius et incidunt. Sint asperiores qui. Doloribus qui voluptatem modi ipsa doloremque."], ["created_at", "2017-10-04 12:28:53.403088"], ["updated_at", "2017-10-04 12:28:53.403088"], ["user_id", 4], ["tag", 4]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 5"], ["description", "Iure facere animi quia eos repellendus est. Eos cumque aut accusantium velit animi."], ["created_at", "2017-10-04 12:28:53.414192"], ["updated_at", "2017-10-04 12:28:53.414192"], ["user_id", 5], ["tag", 5]]
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 6"], ["description", "Voluptatem eum et tenetur qui velit soluta alias. At est reiciendis et. Nulla et et accusamus minima id sunt. Ut debitis id."], ["created_at", "2017-10-04 12:28:53.452995"], ["updated_at", "2017-10-04 12:28:53.452995"], ["user_id", 6], ["tag", 6]]
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 7"], ["description", "Atque qui amet deleniti minima dolorum dolore. Hic consequatur laboriosam quidem excepturi praesentium. Earum ea beatae porro nemo explicabo similique recusandae. Amet rem omnis."], ["created_at", "2017-10-04 12:28:53.487672"], ["updated_at", "2017-10-04 12:28:53.487672"], ["user_id", 7], ["tag", 7]]
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 8"], ["description", "Amet vel accusamus a non vitae quia. Tempora at nemo ab. Itaque illum iste necessitatibus modi."], ["created_at", "2017-10-04 12:28:53.530445"], ["updated_at", "2017-10-04 12:28:53.530445"], ["user_id", 8], ["tag", 8]]
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 9"], ["description", "Ullam vero sint eum eum voluptatem amet. Quis est unde in nam et sunt."], ["created_at", "2017-10-04 12:28:53.565396"], ["updated_at", "2017-10-04 12:28:53.565396"], ["user_id", 9], ["tag", 9]]
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "description", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "album_id"[0m  [["album_name", "album 10"], ["description", "Maxime laboriosam sed quo. Omnis perferendis dolores sit nam qui non. Itaque quia numquam. Rerum aut quis."], ["created_at", "2017-10-04 12:28:53.603315"], ["updated_at", "2017-10-04 12:28:53.603315"], ["user_id", 10], ["tag", 10]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 2"], ["view", 20], ["like", 4], ["created_at", "2017-10-04 12:28:53.625288"], ["updated_at", "2017-10-04 12:28:53.625288"], ["album", 2]]
+  [1m[35m (24.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 3"], ["view", 30], ["like", 6], ["created_at", "2017-10-04 12:28:53.653034"], ["updated_at", "2017-10-04 12:28:53.653034"], ["album", 3]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 4"], ["view", 40], ["like", 8], ["created_at", "2017-10-04 12:28:53.660013"], ["updated_at", "2017-10-04 12:28:53.660013"], ["album", 4]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 5"], ["view", 50], ["like", 10], ["created_at", "2017-10-04 12:28:53.680009"], ["updated_at", "2017-10-04 12:28:53.680009"], ["album", 5]]
+  [1m[35m (65.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 6"], ["view", 60], ["like", 12], ["created_at", "2017-10-04 12:28:53.749689"], ["updated_at", "2017-10-04 12:28:53.749689"], ["album", 6]]
+  [1m[35m (21.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 7"], ["view", 70], ["like", 14], ["created_at", "2017-10-04 12:28:53.776078"], ["updated_at", "2017-10-04 12:28:53.776078"], ["album", 7]]
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 8"], ["view", 80], ["like", 16], ["created_at", "2017-10-04 12:28:53.819075"], ["updated_at", "2017-10-04 12:28:53.819075"], ["album", 8]]
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "photos" ("photo_name", "view", "like", "created_at", "updated_at", "album") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "photo_id"[0m  [["photo_name", "photo 9"], ["view", 90], ["like", 18], ["created_at", "2017-10-04 12:28:53.853734"], ["updated_at", "2017-10-04 12:28:53.853734"], ["album", 9]]
+  [1m[35m (38.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Similique fugiat animi necessitatibus aut facere eum."], ["content", "Quibusdam sapiente ducimus suscipit tenetur non mollitia. Voluptatum fugiat deleniti id ratione dolores est. Qui quis placeat voluptas. Fugit soluta et libero ipsam. Quae impedit doloribus et fuga eaque iure."], ["view", 10], ["useful", 4], ["created_at", "2017-10-04 12:28:53.936316"], ["updated_at", "2017-10-04 12:28:53.936316"], ["user_id", 2], ["tag", 2]]
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Quos aut ut enim."], ["content", "Labore sit autem ea qui. Incidunt id minus. Rerum sunt nam. Nisi et vero quisquam omnis deserunt."], ["view", 15], ["useful", 6], ["created_at", "2017-10-04 12:28:53.961430"], ["updated_at", "2017-10-04 12:28:53.961430"], ["user_id", 3], ["tag", 3]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Dolor nihil ipsa dicta suscipit enim qui."], ["content", "Ducimus et natus incidunt perspiciatis nulla et qui. Suscipit ut odio sit delectus. Nesciunt dolore id repellendus sint. Eius optio beatae aut."], ["view", 20], ["useful", 8], ["created_at", "2017-10-04 12:28:53.968432"], ["updated_at", "2017-10-04 12:28:53.968432"], ["user_id", 4], ["tag", 4]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Soluta aliquam eaque dolorum autem ut totam sint."], ["content", "Molestiae distinctio qui. Et quis ut et amet laborum facilis et. Aliquid animi nihil doloribus possimus atque ut et."], ["view", 25], ["useful", 10], ["created_at", "2017-10-04 12:28:53.975114"], ["updated_at", "2017-10-04 12:28:53.975114"], ["user_id", 5], ["tag", 5]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Illo quo magnam distinctio praesentium."], ["content", "Aut qui rerum quos corrupti molestiae iusto. Dolorem consectetur rerum ea veniam perferendis expedita aut. Modi molestias deleniti sapiente minima recusandae. Atque omnis et. Officiis eum ut dolor adipisci maxime facilis."], ["view", 30], ["useful", 12], ["created_at", "2017-10-04 12:28:53.982343"], ["updated_at", "2017-10-04 12:28:53.982343"], ["user_id", 6], ["tag", 6]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Facere doloribus aut eveniet dolorem exercitationem."], ["content", "In suscipit eveniet aliquid illum blanditiis minima. Architecto quos expedita voluptates praesentium. Qui id harum nostrum qui omnis. Ab sit harum qui dolorem. Saepe quidem voluptas modi et."], ["view", 35], ["useful", 14], ["created_at", "2017-10-04 12:28:53.989019"], ["updated_at", "2017-10-04 12:28:53.989019"], ["user_id", 7], ["tag", 7]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Voluptatem odit sint consequatur doloribus eos ut ut."], ["content", "Nemo hic id nihil non sed saepe sunt. Nulla distinctio eligendi vel impedit. Eaque libero blanditiis. Quo dignissimos totam tenetur doloremque numquam quam recusandae. Magni dolores placeat sed quae."], ["view", 40], ["useful", 16], ["created_at", "2017-10-04 12:28:53.996102"], ["updated_at", "2017-10-04 12:28:53.996102"], ["user_id", 8], ["tag", 8]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Nulla fugiat non et odio nesciunt consectetur."], ["content", "Cum distinctio dolorem alias. Fugit aut odit pariatur et dicta laudantium. Labore commodi voluptatibus doloremque corrupti dolores praesentium."], ["view", 45], ["useful", 18], ["created_at", "2017-10-04 12:28:54.002841"], ["updated_at", "2017-10-04 12:28:54.002841"], ["user_id", 9], ["tag", 9]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "view", "useful", "created_at", "updated_at", "user_id", "tag") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "blog_id"[0m  [["title", "Sunt commodi sed velit laboriosam error voluptas."], ["content", "Itaque quas quis magni beatae est nobis recusandae. Voluptas nemo quod et non earum rerum eaque. Qui accusantium aliquam id non est reiciendis. Tenetur aut et."], ["view", 50], ["useful", 20], ["created_at", "2017-10-04 12:28:54.019738"], ["updated_at", "2017-10-04 12:28:54.019738"], ["user_id", 10], ["tag", 10]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Est sit in ea dolores dolorem ex. Veniam nobis tenetur quia id error. Eveniet nisi sequi qui."], ["created_at", "2017-10-04 12:28:54.057688"], ["updated_at", "2017-10-04 12:28:54.057688"], ["author", 2], ["destination", 2]]
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Architecto vitae temporibus quis eum porro. Eveniet maiores corrupti alias ex dolor."], ["created_at", "2017-10-04 12:28:54.097946"], ["updated_at", "2017-10-04 12:28:54.097946"], ["author", 3], ["destination", 3]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Sint asperiores illo unde. Laboriosam ut iusto. Repellat sequi quasi quae alias expedita quibusdam."], ["created_at", "2017-10-04 12:28:54.106033"], ["updated_at", "2017-10-04 12:28:54.106033"], ["author", 4], ["destination", 4]]
+  [1m[35m (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Voluptatem est enim omnis distinctio et. Quo iure fugiat culpa qui vero rerum."], ["created_at", "2017-10-04 12:28:54.124810"], ["updated_at", "2017-10-04 12:28:54.124810"], ["author", 5], ["destination", 5]]
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Praesentium id non eum a. Quasi reiciendis consequatur. Quia labore provident voluptates voluptatibus nulla libero. Nesciunt commodi corporis rerum dolorem hic illum."], ["created_at", "2017-10-04 12:28:54.166201"], ["updated_at", "2017-10-04 12:28:54.166201"], ["author", 6], ["destination", 6]]
+  [1m[35m (67.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Magni cumque reprehenderit eaque qui. Officiis inventore veritatis dolores. Sed quam saepe recusandae repellendus deserunt aut sit. Impedit quod voluptatem iusto ut."], ["created_at", "2017-10-04 12:28:54.239498"], ["updated_at", "2017-10-04 12:28:54.239498"], ["author", 7], ["destination", 7]]
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "pcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "pcomment_id"[0m  [["content", "Sit corrupti dolor labore. Consequatur amet optio maiores libero natus eos doloribus. Nam beatae ducimus modi."], ["created_at", "2017-10-04 12:28:54.265557"], ["updated_at", "2017-10-04 12:28:54.265557"], ["author", 8], ["destination", 8]]
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Qui a aspernatur dolore voluptatem nihil et non. Fugiat ducimus eveniet. Ut inventore et facere."], ["created_at", "2017-10-04 12:28:54.353036"], ["updated_at", "2017-10-04 12:28:54.353036"], ["author", 2], ["destination", 2]]
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Saepe autem eos est sapiente consequatur officia deleniti. Ipsa fuga laborum quo doloribus blanditiis. Quam debitis aut. Et suscipit est consequatur."], ["created_at", "2017-10-04 12:28:54.396276"], ["updated_at", "2017-10-04 12:28:54.396276"], ["author", 3], ["destination", 3]]
+  [1m[35m (62.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Fugiat qui at ut. Recusandae magnam velit eum quasi. Recusandae accusantium nostrum consectetur alias sapiente enim. Voluptas aut vero."], ["created_at", "2017-10-04 12:28:54.464594"], ["updated_at", "2017-10-04 12:28:54.464594"], ["author", 4], ["destination", 4]]
+  [1m[35m (28.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Error doloribus ipsa ipsum. Eligendi sapiente architecto tempora dolores consequatur nihil quidem. Earum id non accusantium quo."], ["created_at", "2017-10-04 12:28:54.498617"], ["updated_at", "2017-10-04 12:28:54.498617"], ["author", 5], ["destination", 5]]
+  [1m[35m (60.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Aut praesentium quis rerum itaque. Excepturi laboriosam vel quaerat cum explicabo consequatur dolore. Sunt sint veniam voluptatum libero. Ea culpa blanditiis eum neque eaque assumenda."], ["created_at", "2017-10-04 12:28:54.564143"], ["updated_at", "2017-10-04 12:28:54.564143"], ["author", 6], ["destination", 6]]
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Voluptate sequi eum cupiditate eum reprehenderit officia. Corporis quis maxime molestiae."], ["created_at", "2017-10-04 12:28:54.598281"], ["updated_at", "2017-10-04 12:28:54.598281"], ["author", 7], ["destination", 7]]
+  [1m[35m (38.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Impedit qui sit fugit aliquid qui veritatis. Nobis ut autem. Debitis id ut enim quaerat cupiditate."], ["created_at", "2017-10-04 12:28:54.642470"], ["updated_at", "2017-10-04 12:28:54.642470"], ["author", 8], ["destination", 8]]
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Laudantium voluptatum enim eveniet. Quibusdam ab qui dolor ex non aliquid. Enim neque ut culpa quis placeat sed. Corporis quis ullam repellat et."], ["created_at", "2017-10-04 12:28:54.676555"], ["updated_at", "2017-10-04 12:28:54.676555"], ["author", 9], ["destination", 9]]
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
