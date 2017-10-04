@@ -1,0 +1,2 @@
+class Pcomment < ApplicationRecord
+end
