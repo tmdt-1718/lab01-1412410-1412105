@@ -19,7 +19,7 @@ end
 end
 
 (2..9).each do |index|
-	Photo.create!(:photo_name => "photo #{index}", :album => index, :view => index*10, :like => index*2)
+	Photo.create!(:photo_name => "photo #{index}", :album_id => index, :view => index*10, :like => index*2, :user_id => index)
 end
 
 (2..10).each do |index|

@@ -56,9 +56,10 @@ ActiveRecord::Schema.define(version: 20171004121956) do
     t.string "photo_name"
     t.integer "view"
     t.integer "like"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "album"
+    t.integer "album_id"
   end
 
   create_table "tags", primary_key: "tag_id", id: :bigint, default: -> { "nextval('tags_id_seq'::regclass)" }, force: :cascade do |t|
@@ -85,6 +86,6 @@ ActiveRecord::Schema.define(version: 20171004121956) do
   add_foreign_key "blogs", "users", primary_key: "user_id"
   add_foreign_key "pcomments", "photos", column: "destination", primary_key: "photo_id"
   add_foreign_key "pcomments", "users", column: "author", primary_key: "user_id"
-  add_foreign_key "photos", "albums", column: "album", primary_key: "album_id"
+  add_foreign_key "photos", "albums", primary_key: "album_id"
   add_foreign_key "users", "photos", column: "avatar", primary_key: "photo_id"
 end
