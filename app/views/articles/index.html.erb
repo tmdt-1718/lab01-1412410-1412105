@@ -1,5 +1,7 @@
 <h1>Articles#index</h1>
 <ul>
-	I need to write something here
+	<% @articles.each do |article| %>
+		<li><%= article.name %> - <%= article.author %></li>
+	<% end %>
 </ul>
 
