@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
   [1m[35m (110.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
   [1m[35m (115.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
@@ -2588,6 +2590,7 @@ actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
 =======
+>>>>>>> master
 Started GET "/" for 172.19.0.1 at 2017-10-04 05:28:05 +0000
 Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -4257,7 +4260,10 @@ puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 ActionController::RoutingError (No route matches [GET] "/sessions/1412105_pic.jpg"):
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> master
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
 web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
@@ -4284,6 +4290,8 @@ puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
 Started GET "/blog" for 172.19.0.1 at 2017-10-04 11:18:33 +0000
 Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
@@ -4304,6 +4312,7 @@ actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
 =======
+>>>>>>> master
 Started GET "/" for 172.19.0.1 at 2017-10-04 09:05:51 +0000
 Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by HomeController#index as HTML
@@ -4616,7 +4625,10 @@ Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0
 ActionController::RoutingError (No route matches [GET] "/session/logout"):
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> master
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
 web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
@@ -4643,6 +4655,8 @@ puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
   [1m[35m (67.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
   [1m[35m (30.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
@@ -4852,6 +4866,7 @@ Completed 200 OK in 78ms (Views: 66.2ms | ActiveRecord: 0.2ms)
 
 Started GET "/about" for 172.19.0.1 at 2017-10-04 11:19:32 +0000
 =======
+>>>>>>> master
 Started GET "/" for 172.19.0.1 at 2017-10-04 09:19:20 +0000
 Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by HomeController#index as HTML
@@ -4908,11 +4923,16 @@ Completed 302 Found in 48ms (ActiveRecord: 4.4ms)
 
 
 Started GET "/about" for 172.19.0.1 at 2017-10-04 09:20:15 +0000
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> master
 Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by AboutController#index as HTML
   Rendering about/index.html.erb within layouts/application
   Rendered about/index.html.erb within layouts/application (0.5ms)
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
 Completed 200 OK in 78ms (Views: 74.0ms | ActiveRecord: 0.0ms)
 
@@ -4928,6 +4948,7 @@ Completed 200 OK in 72ms (Views: 65.9ms | ActiveRecord: 0.2ms)
 
 Started GET "/" for 172.19.0.1 at 2017-10-04 11:19:33 +0000
 =======
+>>>>>>> master
 Completed 200 OK in 353ms (Views: 343.3ms | ActiveRecord: 0.0ms)
 
 
@@ -4948,11 +4969,16 @@ Completed 200 OK in 271ms (Views: 264.1ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/" for 172.19.0.1 at 2017-10-04 09:23:57 +0000
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> master
 Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
   Rendered home/index.html.erb within layouts/application (0.5ms)
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
 Completed 200 OK in 67ms (Views: 62.2ms | ActiveRecord: 0.0ms)
 
@@ -14098,6 +14124,7 @@ Migrating to ChangeObject (20171004121956)
   [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "bcomments" ("content", "created_at", "updated_at", "author", "destination") VALUES ($1, $2, $3, $4, $5) RETURNING "bcomment_id"[0m  [["content", "Vero tenetur iste maiores non ea quia. Et officiis dolorum suscipit dignissimos. Est qui et."], ["created_at", "2017-10-04 13:04:56.522250"], ["updated_at", "2017-10-04 13:04:56.522250"], ["author", 9], ["destination", 9]]
   [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
 =======
+>>>>>>> master
 Completed 200 OK in 368ms (Views: 361.1ms | ActiveRecord: 0.0ms)
 
 
@@ -16846,4 +16873,7 @@ ActionView::Template::Error (undefined method `user_name' for nil:NilClass):
   
 app/views/blog/index.html.erb:12:in `block in _app_views_blog_index_html_erb___2488838961741286722_70070560489660'
 app/views/blog/index.html.erb:7:in `_app_views_blog_index_html_erb___2488838961741286722_70070560489660'
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> master

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20171004104229) do
+=======
 ActiveRecord::Schema.define(version: 20171004121956) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +75,7 @@ ActiveRecord::Schema.define(version: 20171004121956) do
 
   create_table "users", primary_key: "user_id", id: :bigint, default: -> { "nextval('users_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "user_name"
-    t.string "password"
+    t.string "password_hash"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
