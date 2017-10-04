@@ -1,2 +1,0 @@
-class Bcomment < ApplicationRecord
-end
