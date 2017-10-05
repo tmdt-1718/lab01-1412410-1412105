@@ -13,7 +13,7 @@
       <div class="row">
         <div class="header-content col-md-12">
           <nav class="navbar navbar-expand-md navbar-light" style="background-color: #C0C0C0;">
-        		<a href="/" class="navbar-brand">
+        		<a href="#" class="navbar-brand">
         			BLOGHUB!
         		</a>
         		<div class="collapse navbar-collapse" id="navbar-collapse-content">
@@ -53,7 +53,27 @@
         		</button>
         	</nav>
         </div>
-        <div class="content col-md-12">
+        <div class="col-md-2">
+        </br>
+          <nav class="navbar navbar-expand-sm" role="navigation" style="background-color:#000000;">
+            <div class="container">
+            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="color: yellow;">
+              <ul class="nav navbar-nav" style="font-size:30px;">
+                <li style="color: #add8e6;">Search</li>
+                <input class="form-control input-sm" id="inputsm" type="text">
+                <li ><a href="/">Home</a></li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+                <li ><a href="/album">Album</a></li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <li ><a href="/blog">Blog</a></li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <li><a href="/about">About</a></li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                <div  style="color: yellow;">Click here!</div>
+              </button>
+        </nav>  
+        </div>
+        <div class="content col-md-10">
             <%= yield %>
         </div>
         <div class="footer col-md-12" style="margin-top: 20px">
@@ -69,4 +89,5 @@
 
   </body>
 </html>
+
 
