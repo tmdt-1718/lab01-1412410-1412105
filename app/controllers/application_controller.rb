@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -7,3 +8,15 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+=======
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  def authenticate
+    if session[:current_user].nil?
+      redirect_to login_path
+    end
+  end
+end
+
+>>>>>>> master

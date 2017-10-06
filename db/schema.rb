@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20171004121956) do
 
   create_table "users", primary_key: "user_id", id: :bigint, default: -> { "nextval('users_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "user_name"
-    t.string "password"
+    t.string "password_hash"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
