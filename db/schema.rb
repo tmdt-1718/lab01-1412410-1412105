@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 20171004121956) do
   create_table "albums", primary_key: "album_id", id: :bigint, default: -> { "nextval('albums_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "album_name"
     t.text "description"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "tag"
-    t.integer "cover"
+    t.integer "photo_id"
   end
 
   create_table "bcomments", primary_key: "bcomment_id", id: :bigint, default: -> { "nextval('bcomments_id_seq'::regclass)" }, force: :cascade do |t|
@@ -72,12 +73,13 @@ ActiveRecord::Schema.define(version: 20171004121956) do
     t.string "user_name"
     t.string "password_hash"
     t.string "email"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "avatar"
   end
 
-  add_foreign_key "albums", "photos", column: "cover", primary_key: "photo_id"
+  add_foreign_key "albums", "photos", primary_key: "photo_id"
   add_foreign_key "albums", "tags", column: "tag", primary_key: "tag_id"
   add_foreign_key "albums", "users", primary_key: "user_id"
   add_foreign_key "bcomments", "blogs", column: "destination", primary_key: "blog_id"
