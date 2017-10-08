@@ -6,7 +6,7 @@
 			<% @blogs.each do |blog| %>
 			<div class="card">
 			  <div class="card-body">
-			  	<img  src="tom_pic.jpg" alt="Tom and Jerry" width="60%">
+			  	<img  src="<%= blog.user.cover %>" alt="cover" width="40%">
 			    <h4 class="card-title"><%= blog.title %></h4>
 			    <h6 class="card-subtitle mb-2 text-muted">by <%= blog.user.user_name %></h6>
 			    <p class="something"><%= blog.content %></p>

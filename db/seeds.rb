@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do |index|
-	User.create!(:user_name => Faker::Name.name, :email => Faker::Internet.unique.email, :password => "password #{index}")
+	User.create!(:user_name => Faker::Name.name, :email => Faker::Internet.unique.email, :password => "password #{index}", :cover => Faker::Avatar.unique.image)
 end
 
 10.times do |index|
@@ -15,11 +15,11 @@ end
 end
 
 (2..10).each do |index|
-	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :cover => nil, :tag => index, :user_id => index)
+	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :photo_id => nil, :tag => index, :user_id => index, :cover => Faker::Company.unique.logo)
 end
 
-(2..9).each do |index|
-	Photo.create!(:photo_name => "photo #{index}", :album_id => index, :view => index*10, :like => index*2, :user_id => index)
+(2..30).each do |index|
+	Photo.create!(:photo_name => Faker::Avatar.unique.image, :album_id => Faker::Number.between(2, 9), :view => index*10, :like => index*2, :user_id => Faker::Number.between(1, 10))
 end
 
 (2..10).each do |index|
