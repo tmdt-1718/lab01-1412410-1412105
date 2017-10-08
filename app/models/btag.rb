@@ -1,2 +1,0 @@
-class Btag < ApplicationRecord
-end
