@@ -13,7 +13,7 @@ URL: **URL hosting của bài tập**
 Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.
 
 Yêu cầu **GIT**:
-* [ ] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
+* [x] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 
 Yêu cầu **bắt buộc**
 * [ ] Thiết kế trang web theo responsive với bootstrap với header (navigation bar, logo), left menu, footer và content. (**MSSV**)
@@ -27,17 +27,17 @@ Yêu cầu **bắt buộc**
 * [ ] Nhấn vào mỗi bài viết sẽ thấy chi tiết bài viết cùng đầy đủ nội dung của bài viết. (**MSSV**)
 * [ ] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (**MSSV**)
 * [ ] Cho phép người dùng đăng nhập, đăng xuất, đăng ký thông tin tài khoản. (**MSSV**)
-* [ ] Cho phép người dùng đã đăng nhập đăng thêm bài viết mới. (**MSSV**)
+* [x] Cho phép người dùng đã đăng nhập đăng thêm bài viết mới. (**1412105**)
 * [ ] Sử dụng bcrypt hoặc devise để quản lý thông tin người dùng và băm mật khẩu. (**MSSV**)
 
 Yêu cầu **không bắt buộc**:
-* [ ] Có thể xem danh sách các comment của từng bài viết.  (**MSSV**)
-* [ ] Cho phép người dùng đã đăng nhập comment cho bài viết. (**MSSV**)
-* [ ] Quản lý thêm thông tin tag cho mỗi bài viết. Mỗi bài viết có thể bao gồm nhiều tag và mỗi tag có thể có nhiều bài viết. (**MSSV**)
+* [x] Có thể xem danh sách các comment của từng bài viết.  (**1412105**)
+* [x] Cho phép người dùng đã đăng nhập comment cho bài viết. (**1412105**)
+* [x] Quản lý thêm thông tin tag cho mỗi bài viết. Mỗi bài viết có thể bao gồm nhiều tag và mỗi tag có thể có nhiều bài viết. (**1412105**)
 * [ ] Cho phép người dùng đăng nhập bằng tài khoản facebook và lấy ảnh đại diện, email từ facebook. (**MSSV**)
 * [ ] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**MSSV**)
 * [ ] Chỉ cho phép người tạo album được phép thêm, xóa ảnh mình đã đăng vào album. (**MSSV**)
-* [ ] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**MSSV**)
+* [x] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**1412105**)
 * [ ] Cho phép người dùng layout bài viết bằng markdown. (**MSSV**)
 * [ ] Gửi mail cho người dùng khi người dùng đã đăng nhập thành công. (**MSSV**)
 * [ ] Gửi mail cho tác giả khi có người dùng comment vào bài viết của họ. (**MSSV**)

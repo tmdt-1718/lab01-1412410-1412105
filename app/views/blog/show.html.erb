@@ -1,16 +1,47 @@
 <h1><%= @blogs.title %></h1>
-</br></br></br></br>
 <div class="container">
-	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
+	<div class="row" style="margin: 30px 0px">
+		<div class="col-md-8 mx-auto">
 			<div class="card">
 			  <div class="card-body">
 			    <h6 class="card-subtitle mb-2 text-muted">by <%= @blogs.user.user_name %></h6>
 			    <p class="card-text"><%= @blogs.content %></p>
+					<% if @blogs.user_id == session[:current_user]["user_id"]%>
+							<%= link_to "Edit", editblog_path(@blogs.blog_id) , class: "btn btn-info", style: "float: right"%>
+					<% end %>
 			  </div>
 			</div>
 		</div>
 	</div>
-	</br></br></br></br>
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<div style="margin-bottom: 50px">
+				<%= form_with scope: :bcomment, local: true  do |f| %>
+					<div class="form-group">
+						<%= f.text_area :content, class: "form-control", placeholder: "Writes your comments about this blog..." %>
+						<button style="float: right"class="btn btn-secondary" type="submit">Post</button>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<h6>Comments</h6>
+			<% if @bcomments.count == 0 %>
+				<p>Blog haven't comments</p>
+			<% else %>
+				<table class="table-hover col-md-12">
+					<% @bcomments.each do |bcomment| %>
+					<tr>
+						<td>
+								<p style="font-size: 13px;"><%= bcomment.content %></p>
+								<p style="font-size: 11px; float: right" class="font-italic">by: <%= User.find_by_user_id(bcomment.user_id).user_name %></p>
+						</td>
+					</tr>
+					<% end %>
+				</table>
+			<% end %>
+		</div>
+	</div>
 </div>

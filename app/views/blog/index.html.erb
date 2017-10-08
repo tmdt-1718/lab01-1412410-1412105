@@ -1,26 +1,45 @@
-<h1>BLOG PAGE</h1>
-</br></br></br></br>
 <div class="container">
-	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
-			<% @blogs.each do |blog| %>
-			<div class="card">
-			  <div class="card-body">
-			  	<img  src="tom_pic.jpg" alt="Tom and Jerry" width="60%">
-			    <h4 class="card-title"><%= blog.title %></h4>
-			    <h6 class="card-subtitle mb-2 text-muted">by <%= blog.user.user_name %></h6>
-			    <p class="card-text"><%= blog.content %></p>
-			    <p class="card-text">Number of View: <%= blog.view %></p>
-			    <!-- <a href="<%= blog_path(blog.id)%>" class="card-link">Read more</a> -->
-			    <%= link_to blog_path(blog.id), class: "card-link" do %>
-			    Read more
-			    <% end %>
-			  </div>
+	<h1 style="margin-bottom: 20px">BLOGS PAGE</h1>
+		<div class="row">
+			<div class="col-md-6 mx-auto"  style="margin: 30px 0px">
+				<div class="col-md-12">
+					<a href="\blogs/new">
+						<button type="submit" class="btn btn-info" style="float: right; margin-left: 20px">
+							New blog
+						</button>
+					</a>
+					 <%= link_to "My blogs", myblogs_path(session[:current_user]["user_id"]) , class: "btn btn-info", style: "float: right"%>
 			</div>
-			</br></br>
-			<% end %>
 		</div>
 	</div>
-	</br></br></br></br>
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<div class="col-md-12">
+				<% if @blogs.nil? %>
+					<p>Haven't blogs to show</p>
+				<% else %>
+					<% @blogs.each do |blog| %>
+						<div class="card">
+							<div class="card-body">
+								<img  src="tom_pic.jpg" alt="Tom and Jerry" width="60%">
+								<h4 class="card-title"><%= blog.title %></h4>
+								<h6 class="card-subtitle mb-2 text-muted">by <%= blog.user.user_name %></h6>
+								<p class="something"><%= blog.content %></p>
+								<p class="card-text">Number of View: <%= blog.view %></p>
+								<p class="card-text" style="display: inline;">Tag: </p>
+								<% @btags.each do |btag| %>
+									<% if btag.blog_id == blog.id %>
+											<a href="#">#<%= Tag.find_by_tag_id(btag.tag_id).tag_name %> </a>
+									<% end %>
+								<% end %></br>
+								<%= link_to show_blog_path(blog.id), class: "card-link" do %>
+								Read more
+								<% end %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
