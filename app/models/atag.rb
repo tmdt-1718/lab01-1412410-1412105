@@ -1,0 +1,2 @@
+class Atag < ApplicationRecord
+end

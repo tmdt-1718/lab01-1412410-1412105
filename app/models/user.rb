@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-class User < ApplicationRecord
-	has_many :blogs
-	has_many :albums
-	has_many :photos
-end
-=======
 class User < ApplicationRecord
 	has_many :blogs
 	has_many :albums
@@ -18,4 +11,3 @@ class User < ApplicationRecord
 		self.password_hash = @password
 	end
 end
->>>>>>> Stashed changes

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       if user && user.password == params[:session][:password]
         session[:current_user] = user
         flash[:success] = "Login successfully."
-        redirect_to about_path
+        redirect_to blog_path
       else
         flash[:error] = "Wrong user or password."
         render :new

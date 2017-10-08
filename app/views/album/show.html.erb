@@ -5,7 +5,7 @@
 	  <img class="card-img-top" src="tom_pic.jpg" alt="Card image cap">
 	  <div class="card-body">
 	    <h4 class="card-title"><%= photo.photo_name %></h4>
-	    <h6 class="card-subtitle mb-2 text-muted">by <%= photo.user.user_name%></h6>
+	    <h6 class="card-subtitle mb-2 text-muted">by <%= @album.user.user_name%></h6>
 	    <p class="card-text">Number of view: <%= photo.view %></p>
 	  </div>
 	</div>
