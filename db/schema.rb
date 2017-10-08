@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004121956) do
+ActiveRecord::Schema.define(version: 20171004040137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,17 +22,24 @@ ActiveRecord::Schema.define(version: 20171004121956) do
     t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "author"
+    t.integer "cover"
     t.integer "tag"
-    t.integer "photo_id"
+  end
+
+  create_table "atags", primary_key: "atag_id", id: :bigint, default: -> { "nextval('atags_id_seq'::regclass)" }, force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "bcomments", primary_key: "bcomment_id", id: :bigint, default: -> { "nextval('bcomments_id_seq'::regclass)" }, force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author"
-    t.integer "destination"
+    t.integer "user_id"
+    t.integer "blog_id"
   end
 
   create_table "blogs", primary_key: "blog_id", id: :bigint, default: -> { "nextval('blogs_id_seq'::regclass)" }, force: :cascade do |t|
@@ -42,16 +49,23 @@ ActiveRecord::Schema.define(version: 20171004121956) do
     t.integer "useful"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "author"
     t.integer "tag"
+  end
+
+  create_table "btags", primary_key: "btag_id", id: :bigint, default: -> { "nextval('btags_id_seq'::regclass)" }, force: :cascade do |t|
+    t.integer "blog_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pcomments", primary_key: "pcomment_id", id: :bigint, default: -> { "nextval('pcomments_id_seq'::regclass)" }, force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author"
-    t.integer "destination"
+    t.integer "user_id"
+    t.integer "photo_id"
   end
 
   create_table "photos", primary_key: "photo_id", id: :bigint, default: -> { "nextval('photos_id_seq'::regclass)" }, force: :cascade do |t|
@@ -77,19 +91,19 @@ ActiveRecord::Schema.define(version: 20171004121956) do
     t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "avatar"
+    t.integer "photo_id"
   end
 
-  add_foreign_key "albums", "photos", primary_key: "photo_id"
+  add_foreign_key "albums", "photos", column: "cover", primary_key: "photo_id"
   add_foreign_key "albums", "tags", column: "tag", primary_key: "tag_id"
-  add_foreign_key "albums", "users", primary_key: "user_id"
+  add_foreign_key "albums", "users", column: "author", primary_key: "user_id"
   add_foreign_key "bcomments", "blogs", column: "destination", primary_key: "blog_id"
   add_foreign_key "bcomments", "users", column: "author", primary_key: "user_id"
   add_foreign_key "blogs", "tags", column: "tag", primary_key: "tag_id"
-  add_foreign_key "blogs", "users", primary_key: "user_id"
+  add_foreign_key "blogs", "users", column: "author", primary_key: "user_id"
   add_foreign_key "pcomments", "photos", column: "destination", primary_key: "photo_id"
   add_foreign_key "pcomments", "users", column: "author", primary_key: "user_id"
-  add_foreign_key "photos", "albums", primary_key: "album_id"
+  add_foreign_key "photos", "albums", column: "album", primary_key: "album_id"
   add_foreign_key "users", "photos", column: "avatar", primary_key: "photo_id"
 end
 =======
@@ -184,3 +198,21 @@ ActiveRecord::Schema.define(version: 20171004104229) do
   add_foreign_key "users", "photos", column: "avatar", primary_key: "photo_id"
 end
 >>>>>>> Stashed changes
+
+ActiveRecord::Schema.define(version: 20171006195745) do
+    t.integer "user_id"
+    t.integer "photo_id"
+    t.integer "user_id"
+  add_foreign_key "albums", "photos", primary_key: "photo_id"
+  add_foreign_key "albums", "users", primary_key: "user_id"
+  add_foreign_key "atags", "albums", primary_key: "album_id"
+  add_foreign_key "atags", "tags", primary_key: "tag_id"
+  add_foreign_key "bcomments", "blogs", primary_key: "blog_id"
+  add_foreign_key "bcomments", "users", primary_key: "user_id"
+  add_foreign_key "blogs", "users", primary_key: "user_id"
+  add_foreign_key "btags", "blogs", primary_key: "blog_id"
+  add_foreign_key "btags", "tags", primary_key: "tag_id"
+  add_foreign_key "pcomments", "photos", primary_key: "photo_id"
+  add_foreign_key "pcomments", "users", primary_key: "user_id"
+  add_foreign_key "photos", "albums", primary_key: "album_id"
+  add_foreign_key "users", "photos", primary_key: "photo_id"
