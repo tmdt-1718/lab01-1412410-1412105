@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class AlbumController < ApplicationController
 	before_action :authenticate
 	def index
@@ -6,19 +5,6 @@ class AlbumController < ApplicationController
 	end
 
 	def show
-		@albums = Album.find(params[:id])
+		@photos = Photo.where(album_id: params[:id])
 	end
 end
-=======
-class AlbumController < ApplicationController
-	before_action :authenticate
-	def index
-		@albums = Album.all
-	end
-
-	def show
-		@albums = Album.find(params[:id])
-	end
-end
-
->>>>>>> master

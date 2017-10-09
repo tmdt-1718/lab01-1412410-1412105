@@ -1,14 +1,13 @@
-</br>
 <div class="container">
 	<div class="row">
-		<% @albums.photos.each do |photo| %>
-	<div class="card" style="width: 20rem;">
-	  <img class="card-img-top" src="<%= photo.photo_name %>" alt="photo">
-	  <div class="card-body">
-	    <h6 class="card-subtitle mb-2 text-muted">by <%= photo.user.user_name%></h6>
-	    <p class="card-text">Number of view: <%= photo.view %></p>
-	  </div>
-	</div>
-	<% end %>
+		<% @photos.each do |photo| %>
+			<div class="card" style="width: 20rem;">
+			  <img class="card-img-top" src="car_pic.jpg" alt="photo">
+			  <div class="card-body">
+			    <h6 class="card-subtitle mb-2 text-muted">by <%= photo.album.user.user_name%></h6>
+			    <p class="card-text">Number of view: <%= photo.view %></p>
+			  </div>
+			</div>
+		<% end %>
 	</div>
 </div>

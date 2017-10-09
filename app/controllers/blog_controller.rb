@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-class BlogController < ApplicationController
-	before_action :authenticate
-	def index
-		@blogs = Blog.all
-	end
-
-	def show
-		@blogs = Blog.find(params[:id])
-	end
-end
-=======
 class BlogController < ApplicationController
 	before_action :authenticate
 	def new
@@ -86,6 +74,3 @@ class BlogController < ApplicationController
 	  params.require(:bcomment).permit(:content)
 	end
 end
->>>>>>> de41924... Complete all request about blogs
-
->>>>>>> master

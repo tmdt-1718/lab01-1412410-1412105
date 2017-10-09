@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-
->>>>>>> master
-class User < ApplicationRecord
-	has_many :blogs
-	has_many :albums
-end
-<<<<<<< HEAD
-=======
 class User < ApplicationRecord
 	has_many :blogs
 	has_many :albums
@@ -22,17 +11,3 @@ class User < ApplicationRecord
 		self.password_hash = @password
 	end
 end
->>>>>>> Stashed changes
-=======
-
->>>>>>> master
-
-
-	include BCrypt
-	def password
-	  @password ||= Password.new(self.password_hash)
-	end
-	def password=(new_password)
-	  @password = Password.create(new_password)
-		self.password_hash = @password
-	end
