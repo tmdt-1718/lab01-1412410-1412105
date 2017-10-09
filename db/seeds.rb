@@ -9,7 +9,7 @@
 
 
 (2..10).each do |index|
-	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :photo_id => nil, :user_id => Faker::Number.between(2, 6), :cover => Faker::Company.unique.logo)
+	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :photo_id => nil, :user_id => Faker::Number.between(2, 6))
 end
 
 (2..30).each do |index|
