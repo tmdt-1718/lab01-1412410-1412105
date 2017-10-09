@@ -12,6 +12,5 @@ class ChangeObject < ActiveRecord::Migration[5.1]
     rename_column :pcomments, :destination, :blog_id
     rename_column :pcomments, :author, :user_id
   	rename_column :photos, :album, :album_id
-
   end
 end
