@@ -27,7 +27,7 @@ Yêu cầu **bắt buộc**
 * [x] Nhấn vào mỗi bài viết sẽ thấy chi tiết bài viết cùng đầy đủ nội dung của bài viết. (1412410)
 * [x] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (1412410)
 * [x] Cho phép người dùng đăng nhập, đăng xuất, đăng ký thông tin tài khoản. (1412105)
-* [ ] Cho phép người dùng đã đăng nhập đăng thêm bài viết mới. (**1412105**)
+* [x] Cho phép người dùng đã đăng nhập đăng thêm bài viết mới. (**1412105**)
 * [x] Sử dụng bcrypt hoặc devise để quản lý thông tin người dùng và băm mật khẩu. (1412105)
 
 Yêu cầu **không bắt buộc**:
