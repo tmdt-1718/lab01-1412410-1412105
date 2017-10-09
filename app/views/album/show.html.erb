@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<% @photos.each do |photo| %>
-			<div class="card" style="width: 20rem;">
+			<div class="card mx-auto" style="width: 20rem; margin-bottom: 20px;">
 			  <img class="card-img-top" src="<%=Faker::Avatar.image%>" alt="photo">
 			  <div class="card-body">
 			    <h6 class="card-subtitle mb-2 text-muted">by <%= photo.album.user.user_name%></h6>
