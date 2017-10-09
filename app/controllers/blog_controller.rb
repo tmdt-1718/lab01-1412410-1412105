@@ -10,7 +10,7 @@ class BlogController < ApplicationController
 	def show
 		@blogs = Blog.find(params[:id])
 		if @blog
-			@blog.view = @blog.view + 1
+			@blogs.update(:view => view + 1)
 		end
 		@bcomments = Bcomment.where(blog_id: params[:id])
 	end
@@ -56,10 +56,10 @@ class BlogController < ApplicationController
 		tags.each do |index|
 			 	@newtag = Tag.find_by_tag_name(index)
 				if @newtag
-					Btag.create(:tag_id => @newtag.tag_id, :blog_id => Blog.last.blog_id)
+					Btag.create(:tag_id => @newtag.tag_id, :blog_id => params[:id])
 				else
 					Tag.create(:tag_name => index)
-					Btag.create(:tag_id => Tag.last.tag_id, :blog_id => Blog.last.blog_id)
+					Btag.create(:tag_id => Tag.last.tag_id, :blog_id => params[:id])
 				end
 		end
 		redirect_to blog_path

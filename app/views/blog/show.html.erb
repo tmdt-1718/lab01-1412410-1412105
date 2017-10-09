@@ -4,9 +4,10 @@
 		<div class="col-md-8 mx-auto">
 			<div class="card">
 			  <div class="card-body">
-			    <h6 class="card-subtitle mb-2 text-muted something">by <%= @blogs.user.user_name %></h6>
+					<img src= "<%=Faker::Avatar.image("#{@blogs.user_id}", "50x50", "bmp", "set1", "bg1")%>" alt="avatar">
+			    <h6 class="card-subtitle mb-2 text-muted something" style="margin-top: 5px">by <%= @blogs.user.user_name %></h6>
 			    <p class="card-text"><%= @blogs.content %></p>
-					<% if @blogs.user_id == session[:current_user]["user_id"]%>
+					<% if @blogs.user_id == session[:current_user]["user_id"] %>
 							<%= link_to "Edit", editblog_path(@blogs.blog_id) , class: "btn btn-info", style: "float: right"%>
 					<% end %>
 			  </div>

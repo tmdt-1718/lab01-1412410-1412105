@@ -1,7 +1,7 @@
 <div class="container">
 	<h1 style="margin-bottom: 20px">BLOGS PAGE</h1>
 		<div class="row">
-			<div class="col-md-6 mx-auto"  style="margin: 30px 0px">
+			<div class="col-md-8 mx-auto"  style="margin: 30px 0px">
 				<div class="col-md-12">
 					<a href="\blogs/new">
 						<button type="submit" class="btn btn-info" style="float: right; margin-left: 20px">
@@ -13,17 +13,17 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6 mx-auto">
+		<div class="col-md-8 mx-auto">
 			<div class="col-md-12">
 				<% if @blogs.nil? %>
 					<p>Haven't blogs to show</p>
 				<% else %>
 					<% @blogs.each do |blog| %>
-						<div class="card">
+						<div class="card" style="margin-bottom: 20px">
 							<div class="card-body">
-								<img  src="tom_pic.jpg" alt="Tom and Jerry" width="60%">
 								<h4 class="card-title"><%= blog.title %></h4>
-								<h6 class="card-subtitle mb-2 text-muted">by <%= blog.user.user_name %></h6>
+								<img src= "<%=Faker::Avatar.image("#{blog.user.user_id}", "50x50", "bmp", "set1", "bg1")%>" alt="avatar">
+								<h6 class="card-subtitle mb-2 text-muted" style="margin-top: 5px">by <%= blog.user.user_name %></h6>
 								<p class="something"><%= blog.content %></p>
 								<p class="card-text">Number of View: <%= blog.view %></p>
 								<p class="card-text" style="display: inline;">Tag: </p>
