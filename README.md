@@ -6,7 +6,7 @@ Thành viên:
 * [x] 1412410 Phạm Sĩ Phú   (tên tài khoản github: 1412410)
 * [x] 1412105 Ngô Tiến Dũng (tên tài khoản github: 1412105)
 
-URL: **URL hosting của bài tập**
+URL: https://pacific-earth-51630.herokuapp.com
 
 ## Yêu cầu
 

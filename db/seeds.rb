@@ -6,29 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |index|
-	User.create!(:user_name => Faker::Name.name, :email => Faker::Internet.unique.email, :password => "password #{index}", :cover => Faker::Avatar.unique.image)
-end
 
-10.times do |index|
-	Tag.create!(:tag_name => "#tag#{index}")
-end
 
 (2..10).each do |index|
-	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :photo_id => nil, :tag => index, :user_id => index, :cover => Faker::Company.unique.logo)
+	Album.create!(:album_name => "album #{index}", :description => Faker::Lorem.paragraph(2), :photo_id => nil, :tag_id => nil, :user_id => Faker::Number.between(2, 6), :cover => Faker::Company.unique.logo)
 end
 
 (2..30).each do |index|
-	Photo.create!(:photo_name => Faker::Avatar.unique.image, :album_id => Faker::Number.between(2, 9), :view => index*10, :like => index*2, :user_id => Faker::Number.between(1, 10))
-end
-
-(2..10).each do |index|
-	Blog.create!(:title => Faker::Lorem.sentence, :content => Faker::Lorem.paragraph(3), :user_id => index, :tag => index, :view => index*5, :useful => index*2)
-end
-
-(2..8).each do |index|
-	Pcomment.create!(:content => Faker::Lorem.paragraph(2), :destination => index, :author => index)
-end
-(2..9).each do |index|
-	Bcomment.create!(:content => Faker::Lorem.paragraph(2), :destination => index, :author => index)
+	Photo.create!(:photo_name => Faker::Avatar.unique.image, :album_id => Faker::Number.between(2, 9), :view => index*10, :like => index*2, :user_id => Faker::Number.between(2, 6))
 end
